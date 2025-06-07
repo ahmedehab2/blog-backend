@@ -14,7 +14,10 @@
   ],
   "functions": {
     "index.js": {
-      "includeFiles": ["db.json", "routes.json"]
+      "includeFiles": "db.json"
+    },
+    "index.js": {
+      "includeFiles": "routes.json"
     }
   }
 }
