@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "email": "newuser2@example.com",
+      "password": "$2a$10$bZ6uzBJV9JUcNOSQ4QpJAesS/RUA4xqhOfi6R0PyUo.8plj1w8EDW",
+      "name": "Ahmed Ehab",
+      "id": 1
+    },
+    {
+      "email": "ahmed4@gmail.com",
+      "password": "$2a$10$PB1IxnlvPFKNkSPSHzOTr.cD9z2j4z.jnw9xjsHYcTLpW2uIGk3b.",
+      "name": "mohamed ahmed",
+      "id": 2
+    }
+  ],
+  "posts": [
+    {
+      "title": "Batman",
+      "description": "Batman is a fictional superhero created by Bob Kane and Bill Finger, first appearing in Detective Comics #27. He is known for his detective skills, martial arts expertise, and use of advanced technology in his fight against crime in Gotham City. ",
+      "image": "https://i.ibb.co/SXf18Jxb/def178fd477d.jpg",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "title": "CSS",
+      "description": "CSS, or Cascading Style Sheets, is a stylesheet language used to describe the presentation of a document written in a markup language, such as HTML. It controls how HTML elements are displayed on a webpage, including aspects like fonts, colors, spacing, and layout. CSS is a core technology of the World Wide Web, alongside HTML and JavaScript. ",
+      "image": "https://i.ibb.co/nMN0hWB5/bfbbbe22c538.png",
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "title": "Front End",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea quasi doloribus fuga corporis minus velit sequi repudiandae aliquam perspiciatis explicabo, voluptatum aut libero dolorem facere voluptas est eum sit laboriosam.",
+      "image": "https://i.ibb.co/spcMDfh1/0024fa7ef1f9.webp",
+      "userId": 2,
+      "id": 3
+    },
+    {
+      "title": "Front End 2",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea quasi doloribus fuga corporis minus velit sequi repudiandae aliquam perspiciatis explicabo, voluptatum aut libero dolorem facere voluptas est eum sit laboriosam.",
+      "image": "https://i.ibb.co/spcMDfh1/0024fa7ef1f9.webp",
+      "userId": 2,
+      "id": 4
+    }
+  ]
+}
