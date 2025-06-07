@@ -11,13 +11,5 @@
       "src": "/(.*)",
       "dest": "index.js"
     }
-  ],
-  "functions": {
-    "index.js": {
-      "includeFiles": "db.json"
-    },
-    "index.js": {
-      "includeFiles": "routes.json"
-    }
-  }
+  ]
 }
