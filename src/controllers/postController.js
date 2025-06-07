@@ -17,16 +17,21 @@ async function getPostById(req, res) {
 }
 
 async function updatePost(req, res) {
-  const post = await Post.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-  });
+  const post = await Post.findById(req.params.id);
   if (!post) return res.status(404).json({ message: "Post not found" });
-  res.status(200).json(post);
+  if (req.user.id !== post.userId.toString())
+    return res.status(401).json({ message: "Unauthorized" });
+
+  await Post.updateOne({ _id: req.params.id }, { $set: req.body });
+  res.status(200).json({ message: "Post updated" });
 }
 
 async function deletePost(req, res) {
-  const post = await Post.findByIdAndDelete(req.params.id);
+  const post = await Post.findById(req.params.id);
   if (!post) return res.status(404).json({ message: "Post not found" });
+  if (req.user.id !== post.userId.toString())
+    return res.status(401).json({ message: "Unauthorized" });
+  await Post.deleteOne({ _id: req.params.id });
   res.status(204).send();
 }
 
