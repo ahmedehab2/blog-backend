@@ -11,6 +11,9 @@ connectDB();
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("This API for serving Blog App");
+});
 app.use("/auth", authRoutes);
 app.use("/posts", postRoutes);
 
