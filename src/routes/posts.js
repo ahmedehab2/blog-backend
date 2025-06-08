@@ -7,6 +7,7 @@ import {
   deletePost,
 } from "../controllers/postController.js";
 import authMiddleware from "../middleware/auth.js";
+import uploadMiddleware from "../middleware/multer.js";
 
 const router = Router();
 
@@ -14,11 +15,11 @@ router.get("/", getAllPosts); // Allow unauthenticated access to get all posts
 
 router.use(authMiddleware);
 
-router.post("/", createPost);
+router.post("/", uploadMiddleware("image"), createPost);
 
 router.get("/:id", getPostById);
 
-router.patch("/:id", updatePost);
+router.patch("/:id", uploadMiddleware("image"), updatePost);
 
 router.delete("/:id", deletePost);
 
