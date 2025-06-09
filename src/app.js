@@ -18,7 +18,6 @@ app.use("/auth", authRoutes);
 app.use("/posts", postRoutes);
 
 app.use((err, req, res, next) => {
-  console.log(err);
   if (err.name === "ValidationError") {
     return res.status(400).json({ message: err.message });
   }
