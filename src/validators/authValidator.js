@@ -1,5 +1,5 @@
 import { body } from "express-validator";
-import { validate } from "../middleware/validators";
+import { validate } from "../middleware/validators.js";
 
 export const registerValidator = [
   body("name").notEmpty().withMessage("Name is required"),
