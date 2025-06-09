@@ -8,6 +8,11 @@ import {
 } from "../controllers/postController.js";
 import authMiddleware from "../middleware/auth.js";
 import uploadMiddleware from "../middleware/multer.js";
+import {
+  createPostValidator,
+  getPostByIdValidator,
+  updatePostValidator,
+} from "../validators/postValidator.js";
 
 const router = Router();
 
@@ -15,12 +20,17 @@ router.get("/", getAllPosts); // Allow unauthenticated access to get all posts
 
 router.use(authMiddleware);
 
-router.post("/", uploadMiddleware("image"), createPost);
+router.post("/", uploadMiddleware("image"), createPostValidator, createPost);
 
-router.get("/:id", getPostById);
+router.get("/:id", getPostByIdValidator, getPostById);
 
-router.patch("/:id", uploadMiddleware("image"), updatePost);
+router.patch(
+  "/:id",
+  uploadMiddleware("image"),
+  updatePostValidator,
+  updatePost
+);
 
-router.delete("/:id", deletePost);
+router.delete("/:id", getPostByIdValidator, deletePost);
 
 export default router;
